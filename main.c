@@ -18,14 +18,15 @@ int main(int argc , char **argv) {
 
  for(i=1;i<argc;i++){
         if(strcmp(argv[i],"x")==0){
+            //printf("%d\n",q.size);
+            if (q.size<=0) {
+              printf("Empty queue\n");
+              continue;
+            }
             x=dequeue_struct(&q);
-            if (x==-1) continue;
-            else printf("dequeing %d\n",x);
+            printf("dequeing %d\n",x);
         }
-        else {
-       enqueue_struct(&q, atoi(argv[i]));
-           
-        }
+        else enqueue_struct(&q, atoi(argv[i]));
  }
   return 0;
 }
